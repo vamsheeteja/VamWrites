@@ -1,0 +1,110 @@
+Git Branches
+
+// To view all the branches in a git repo
+
+$ git branch
+
+the branch that is active/or cuurently we are on has a asterisk (*) in front of it.
+
+
+// creating and switching branches
+
+$ git branch branch-name // this command simply makes a branch for us. BUT it does not switch to the branch.
+
+eg: creating a new branch named new-color
+
+			$ git branch new-color
+			       HEAD still points to the master branch.
+			       (HEAD -> master, new-colot)
+
+
+So to switch to the newly created branch 
+
+$ git switch new-color
+
+(HEAD -> new-color)
+
+ 
+IMPORTANT NOTE: git branch branch-name makes a new branch based upon the current HEAD.
+
+// alternative way to switch to another branch
+
+$ git checkout branch-name
+
+// CREATIND AND SWITCHING TO A NEW BRANCH
+
+$ git switch -c branch-name
+
+		the -c is to create a new branch and then switch to it all in one go..
+
+
+L-48  Make sure you commit all changes before you switch to another branches.
+ 
+ ==============================================
+// DELETING BRANCH
+
+
+to delete a branch we should not be on that branch. we should be on another branch to delete a specifiv branch
+
+$ git branch -d | -D branch-name
+
+	for more refer docs
+
+// TO RENAME A BRANCH
+
+to rename a branch we should be on that particular branch
+ 
+ 
+first go to the pariiular branch and then 
+
+$ git branch -m new-branch-name
+
+
+================================================
+
+
+L-50 
+
+the HEAD file in .git folder will actually refere to the current branch
+
+inside heads folder, git creates a file for every branch.
+
+that file contains a commit hash.
+
+so A Branch is a pointer that points to a particular commit.
+
+And HEAD is pointer, pointing to one of those branch references.
+
+
+==================================================================================
+
+// MERGING BRANCHES
+
+IMP POINTS: 
+
+	1) We merge branches, NOT specific commits
+	2) We always merge to the current HEAD branch
+
+
+
+things to be taken care before merge operation 
+
+first switch to the branch that receives the merging branch
+and then from there use git merge command to the branch that is to be merged
+eg.
+	$ git switch master
+	$ git merge bugfix
+	
+	can refer to slides
+
+
+$ git branch -v
+
+
+=============================================
+
+Merge conflicts
+
+
+
+
